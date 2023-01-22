@@ -171,4 +171,22 @@ const usuarios = [
   },
 ]
 
+const divUsuarios = document.getElementById("usuarios");
+
+usuarios.forEach(usuario => {
+  const pNombreApellido = document.createElement("p");
+  pNombreApellido.innerHTML = `${usuario.nombre}`;
+  divUsuarios.appendChild(pNombreApellido);
+
+  const pCargo = document.createElement("p");
+  pCargo.innerHTML = usuario.cargo;
+  divUsuarios.appendChild(pCargo);
+
+  const aFacebook = document.createElement("a");
+  const linkFacebook = usuario.social_media.find(r => r.descripcion === 'facebook').link;
+  aFacebook.setAttribute("href", linkFacebook);
+  aFacebook.innerHTML = "Facebook";
+  divUsuarios.appendChild(aFacebook);
+});
+
 // ====================================================================================================
