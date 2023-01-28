@@ -142,7 +142,7 @@ function evenOdd(number) {
       odd.push(number[i])
     }
   }
-  console.log("par:" + even, "impar:" + odd)
+  console.log("par:" + even, "\n", "impar:" + odd)
 }
 let number = [1, 2, 3, 5, 47]
 
@@ -221,20 +221,34 @@ const usuarios = [
 
 const divUsuarios = document.getElementById("usuarios");
 
+function createTexto(element, value, atribute) {
+  const elementHtml = document.createElement(element)
+  elementHtml.innerHTML = value
+  if (atribute) {
+    elementHtml.setAttribute(atribute.atribute, atribute.value)
+  }
+  return elementHtml
+}
+
 usuarios.forEach(usuario => {
-  const pNombreApellido = document.createElement("p");
-  pNombreApellido.innerHTML = `${usuario.nombre}`;
-  divUsuarios.appendChild(pNombreApellido);
 
-  const pCargo = document.createElement("p");
-  pCargo.innerHTML = usuario.cargo;
-  divUsuarios.appendChild(pCargo);
+  const pNombreApellido = createTexto("p", usuario.nombre)
+  // const pNombreApellido = document.createElement("p");
+  // pNombreApellido.innerHTML = usuario.nombre;
+  // divUsuarios.appendChild(pNombreApellido);
 
-  const aFacebook = document.createElement("a");
+  const pCargo = createTexto("p", usuario.cargo)
+  // const pCargo = document.createElement("p");
+  // pCargo.innerHTML = usuario.cargo;
+  // divUsuarios.appendChild(pCargo);
+
+  // const aFacebook = document.createElement("a");
   const linkFacebook = usuario.social_media.find(r => r.descripcion === 'facebook').link;
-  aFacebook.setAttribute("href", linkFacebook);
-  aFacebook.innerHTML = "Facebook";
-  divUsuarios.appendChild(aFacebook);
+  // aFacebook.setAttribute("href", linkFacebook);
+  const aFacebook = createTexto("a", "facebook", { atribute: "href", value: linkFacebook })
+  // aFacebook.innerHTML = "Facebook";
+
+  divUsuarios.append(pNombreApellido, pCargo, aFacebook);
 });
 
 // ====================================================================================================
