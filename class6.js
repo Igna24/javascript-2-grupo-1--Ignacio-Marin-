@@ -10,7 +10,7 @@ class Persona {
     this.ubicacion = ubicacion
   }
   saludar() {
-    return `Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`
+    return `Hola, mi nombre es ${this.nombre} y mi apellido es ${this.apellido}`
   }
 }
 
@@ -80,5 +80,5 @@ const desarrollador1 = new Desarrollador("Luis", "González", 246810, 30,
 
 console.log(desarrollador1.lenguajeDominado())
 
-desarrollador1.agregarLenguaje("Angular",50)
+desarrollador1.agregarLenguaje("Angular", 50)
 console.log(desarrollador1.lenguajes)
