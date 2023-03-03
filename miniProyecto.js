@@ -53,20 +53,22 @@ class libro {
 
 
   getInfo() {
-    let info = `El titulo del libro es ${this.titulo}`
-    if (this.#cantidad <= 0) {
+    let info = `El titulo del titulo es ${this.titulo}, 
+    escrito por : ${this.autor}, 
+    su precio es: ${this.precio},
+    tenemos disponibles: ${this.cantidad},
+    es año: ${this.anio}`
+    if (this.cantidad <= 0) {
       info = "No hay ejemplares disponibles"
     }
     return info
   }
-
 
 }
 
 // 3. Debe tener una clase Comic que herede de Libro y tenga las siguientes propiedades
 //  extras: dibujante, editorial, volumen. CHECK
 class comic extends libro {
-  // #cantidad
   constructor(titulo, autor, precio, cantidad, anio, dibujante, editorial, volumen) {
     super(titulo, autor, precio, cantidad, anio)
     this.dibujante = dibujante
@@ -74,7 +76,14 @@ class comic extends libro {
     this.volumen = volumen
   }
   getInfo() {
-    let info = `El titulo del libro es ${this.titulo}`
+    let info = `El titulo del comic es ${this.titulo}, 
+    escrito por : ${this.autor}, 
+    su precio es: ${this.precio},
+    tenemos disponibles: ${this.cantidad},
+    es año: ${this.anio},
+    su dibujante es: ${this.dibujante},
+    la editorial es: ${this.editorial}, 
+    con un volumen: ${this.volumen}`
     if (this.cantidad <= 0) {
       info = "No hay ejemplares disponibles"
     }
@@ -96,9 +105,9 @@ class comic extends libro {
 
 const libreria1 = new libreria("primer dato", "segundo dato", ["un libro", "dos libro"], ["un comic", "dos comic"])
 
-const libro1 = new libro("libro x", "nacho", 2000, 0, 2023)
+const libro1 = new libro("libro x", "nacho", 2000, 1, 2023)
 const libro2 = new libro(" libro y", "juan", 255, 0, 2023)
-const comic1 = new comic("comi1", "darrell", 256, 0, 5875, "marin", "asadf", 8)
+const comic1 = new comic("comi1", "darrell", 256, 1, 5875, "marin", "asadf", 8)
 
 
 console.log(libro1.getInfo())
