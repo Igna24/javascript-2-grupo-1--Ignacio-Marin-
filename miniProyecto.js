@@ -66,7 +66,7 @@ class libro {
 // 3. Debe tener una clase Comic que herede de Libro y tenga las siguientes propiedades
 //  extras: dibujante, editorial, volumen. CHECK
 class comic extends libro {
-  #cantidad
+  // #cantidad
   constructor(titulo, autor, precio, cantidad, anio, dibujante, editorial, volumen) {
     super(titulo, autor, precio, cantidad, anio)
     this.dibujante = dibujante
@@ -75,7 +75,7 @@ class comic extends libro {
   }
   getInfo() {
     let info = `El titulo del libro es ${this.titulo}`
-    if (this.#cantidad <= 0) {
+    if (this.cantidad <= 0) {
       info = "No hay ejemplares disponibles"
     }
     return info
