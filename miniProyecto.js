@@ -128,3 +128,25 @@ comic1.anio = 4500
 console.log(`los anios de comic modificados son ${comic1.anio}`)
 
 console.log(libreria1)
+
+
+
+// Crea una lista de opciones
+let options = ['Show Books', 'Show Comics', 'Add book', 'Add Comic'];
+
+// Crea un menú y agrega cada opción
+let menu = document.createElement('ul');
+for (let i = 0; i < options.length; i++) {
+  let item = document.createElement('li');
+  let link = document.createElement('a');
+  link.textContent = options[i];
+  link.setAttribute('href', '#' );
+  item.appendChild(link);
+  menu.appendChild(item);
+}
+
+// Agrega una clase al menú
+menu.classList.add('menu');
+
+// Agrega el menú al cuerpo de la página
+document.body.appendChild(menu);
