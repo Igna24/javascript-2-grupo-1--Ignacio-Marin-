@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pokemon-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#pokemonSelect{
+background-color: rgb(207, 187, 187);
+color: green;
+border: 3px rgb(207, 187, 187) solid;
+border-radius: 10px;
+}
+
+#pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px red solid;
+  border-radius: 10px;
+  width: 300px;
+}
+
+#pokemon-detail img {
+  width: 121px;
+}
+
+#pokemon-detail p {
+  margin: 3px;
+}
+
+#pokemon-detail div {
+  margin-bottom: 20px;
+}
+
+ul {
+  margin-top: 5px;
+  list-style: none;
+  column-count: 2;
+  padding: 0;
+}
